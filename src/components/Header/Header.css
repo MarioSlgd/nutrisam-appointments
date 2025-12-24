@@ -1,0 +1,41 @@
+/* Contenedor principal del header */
+header {
+  background-color: #ffffff;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+/* Navegación interna */
+header nav {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Título / marca */
+header h1 {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+/* Lista del menú */
+header ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+/* Links de navegación */
+header a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+/* Hover simple */
+header a:hover {
+  color: #0077ff;
+}
