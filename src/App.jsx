@@ -17,16 +17,17 @@ import EditAppointment from "./pages/EditAppointment";
 
 //Aqui empeiza app!!!!
 function App() {
-  // 🧠 ESTADO GLOBAL DE CITAS
+  //ESTADO GLOBAL DE CITAS
   const [appointments, setAppointments] = useState([]);
 
   console.log("APPOINTMENTS EN APP:", appointments);
 
-  // 🧠 FUNCIÓN PARA AGREGAR UNA CITA
+  //crear cita
   const addAppointment = (appointment) => {
     setAppointments((prev) => [...prev, appointment]);
   };
 
+  //actualizar cita
   const updateAppointment = (updatedAppointment) => {
     setAppointments((prev) =>
       prev.map((appointment) =>
@@ -37,6 +38,7 @@ function App() {
     );
   };
 
+  //eliminar cita
   const deleteAppointment = (id) => {
     const confirmDelete = window.confirm(
       "¿Seguro que deseas eliminar esta cita?"

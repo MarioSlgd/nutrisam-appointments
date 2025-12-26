@@ -1,41 +1,46 @@
-/* Contenedor principal del header */
-header {
-  background-color: #ffffff;
-  border-bottom: 1px solid #e5e5e5;
-}
-
-/* Navegación interna */
-header nav {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 1rem;
-
+.header {
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
+
+  padding: 16px 24px;
+  border-bottom: 1px solid #e0e0e0;
 }
 
-/* Título / marca */
-header h1 {
-  font-size: 1.2rem;
-  font-weight: 600;
+.header__logo img {
+  height: 40px;
+  width: auto;
+  display: block;
 }
 
-/* Lista del menú */
-header ul {
-  list-style: none;
+.header__nav {
   display: flex;
-  gap: 1rem;
+  gap: 16px;
 }
 
-/* Links de navegación */
-header a {
+.header__nav a {
   text-decoration: none;
   color: #333;
   font-weight: 500;
 }
 
-/* Hover simple */
-header a:hover {
-  color: #0077ff;
+.header__nav a:hover {
+  text-decoration: underline;
+}
+
+.header__branding {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.header__branding img {
+  height: 40px;
+  width: auto;
+  display: block;
+}
+
+.header__title {
+  font-size: 1.1rem;
+  font-weight: 700;
 }

@@ -1,8 +1,10 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 
+import Layout from "../components/Layout";
 import Input from "../components/Input";
 import Button from "../components/Button";
+import "./form.css";
 
 const EditAppointment = ({ appointments, onUpdateAppointment }) => {
   const { id } = useParams();
@@ -46,28 +48,36 @@ const EditAppointment = ({ appointments, onUpdateAppointment }) => {
   };
 
   return (
-    <div>
-      <h2>Editar cita</h2>
+    <Layout>
+      <div className="form-card">
+        <h2 className="form-title">Editar cita</h2>
 
-      {error && <p style={{ color: "red" }}>{error}</p>}
+        {error && <p className="form-error">{error}</p>}
 
-      <form onSubmit={handleSubmit}>
-        <Input
-          label="Nombre del paciente"
-          value={patientName}
-          onChange={(e) => setPatientName(e.target.value)}
-        />
+        <form onSubmit={handleSubmit} className="form">
+          <div className="form-group">
+            <Input
+              label="Nombre del paciente"
+              value={patientName}
+              onChange={(e) => setPatientName(e.target.value)}
+            />
+          </div>
 
-        <Input
-          label="Fecha"
-          type="date"
-          value={date}
-          onChange={(e) => setDate(e.target.value)}
-        />
+          <div className="form-group">
+            <Input
+              label="Fecha"
+              type="date"
+              value={date}
+              onChange={(e) => setDate(e.target.value)}
+            />
+          </div>
 
-        <Button type="submit">Guardar cambios</Button>
-      </form>
-    </div>
+          <div className="form-actions">
+            <Button type="submit">Guardar cambios</Button>
+          </div>
+        </form>
+      </div>
+    </Layout>
   );
 };
 
