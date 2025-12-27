@@ -33,7 +33,6 @@
   align-items: center;
   gap: 10px;
 }
-
 .header__branding img {
   height: 40px;
   width: auto;
@@ -42,5 +41,16 @@
 
 .header__title {
   font-size: 1.1rem;
-  font-weight: 700;
+  font-weight: 600;
+  color: #111827;
+}
+
+.header__nav a {
+  padding: 6px 10px;
+  border-radius: 6px;
+}
+
+.header__nav a.active {
+  background-color: #2563eb;
+  color: white;
 }

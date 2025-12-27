@@ -60,7 +60,7 @@ function App() {
 
       <Routes>
         {/* Página inicial */}
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home appointments={appointments} />} />
 
         {/* Lista de citas */}
         <Route

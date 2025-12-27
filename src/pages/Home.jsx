@@ -1,23 +1,41 @@
+import { Link } from "react-router-dom";
+import Layout from "../components/Layout";
 import Button from "../components/Button";
-import Input from "../components/Input";
-// Página de inicio de la aplicación
-// Aquí normalmente se presenta el producto
-// o se dirige al usuario a la sección principal
-const Home = () => {
-  const handleClick = () => {
-    alert("Botón funcionando correctamente");
-  };
+import "./home.css";
 
+const Home = ({ appointments = [] }) => {
   return (
-    <div>
-      <h1>Nutrisam Appointments</h1>
-      <Input label="nombre del paciente" />
-      <Input label="Fecha" type="date" />
+    <Layout>
+      <div className="dashboard">
+        {/* Header */}
+        <div className="dashboard__header">
+          <h1 className="dashboard__title">Dashboard</h1>
 
-      <Button onClick={handleClick}>Probar Boton</Button>
+          <Link to="/appointments/new">
+            <Button>+ Nueva cita</Button>
+          </Link>
+        </div>
 
-      <p>Gestión de citas nutricionales</p>
-    </div>
+        {/* Estadísticas */}
+        <div className="dashboard__stats">
+          <div className="dashboard__card">
+            <span className="dashboard__card-title">Total de citas</span>
+            <span className="dashboard__card-value">{appointments.length}</span>
+          </div>
+        </div>
+
+        {/* Acciones */}
+        <div className="dashboard__actions">
+          <Link to="/appointments">
+            <Button>Ver citas</Button>
+          </Link>
+
+          <Link to="/appointments/new">
+            <Button>Crear cita</Button>
+          </Link>
+        </div>
+      </div>
+    </Layout>
   );
 };
 

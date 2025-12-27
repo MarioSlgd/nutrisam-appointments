@@ -1,4 +1,5 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+
 import "./header.css";
 
 const Header = () => {
@@ -10,9 +11,27 @@ const Header = () => {
       </div>
 
       <nav className="header__nav">
-        <Link to="/">Inicio</Link>
-        <Link to="/appointments">Citas</Link>
-        <Link to="/appointments/new">Nueva cita</Link>
+        <NavLink
+          to="/"
+          className={({ isActive }) => (isActive ? "active" : "")}
+        >
+          Inicio
+        </NavLink>
+
+        <NavLink
+          to="/appointments"
+          end
+          className={({ isActive }) => (isActive ? "active" : "")}
+        >
+          Citas
+        </NavLink>
+
+        <NavLink
+          to="/appointments/new"
+          className={({ isActive }) => (isActive ? "active" : "")}
+        >
+          Nueva cita
+        </NavLink>
       </nav>
     </header>
   );

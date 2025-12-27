@@ -1,23 +1,49 @@
 .btn {
-  padding: 10px 16px;
-  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 8px 14px;
+  border-radius: 8px;
   border: none;
 
-  background-color: #1976d2;
-  color: white;
-
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   font-weight: 500;
+  line-height: 1;
 
   cursor: pointer;
-  transition: background-color 0.2s ease, opacity 0.2s ease;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease,
+    transform 0.1s ease;
 }
 
-.btn:hover {
-  background-color: #1565c0;
+/* Primario */
+.btn--primary {
+  background-color: #2563eb;
+  color: white;
 }
 
+.btn--primary:hover {
+  background-color: #1e40af;
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.25);
+  transform: translateY(-1px);
+}
+
+/* Peligro */
+.btn--danger {
+  background-color: #dc2626;
+  color: white;
+}
+
+.btn--danger:hover {
+  background-color: #b91c1c;
+  box-shadow: 0 4px 10px rgba(220, 38, 38, 0.25);
+  transform: translateY(-1px);
+}
+
+/* Deshabilitado */
 .btn:disabled {
   opacity: 0.6;
   cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
 }

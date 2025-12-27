@@ -13,7 +13,7 @@ const EditAppointment = ({ appointments, onUpdateAppointment }) => {
   const [patientName, setPatientName] = useState("");
   const [date, setDate] = useState("");
   const [error, setError] = useState("");
-
+  const [isSubmitting, setIsSubmitting] = useState(false);
   useEffect(() => {
     const appointmentToEdit = appointments.find(
       (appointment) => appointment.id === Number(id)
@@ -49,33 +49,43 @@ const EditAppointment = ({ appointments, onUpdateAppointment }) => {
 
   return (
     <Layout>
-      <div className="form-card">
-        <h2 className="form-title">Editar cita</h2>
+      <div className="form-page">
+        <div className="form-card">
+          <h2 className="form-title">Editar cita</h2>
 
-        {error && <p className="form-error">{error}</p>}
+          {error && <p className="form-error">{error}</p>}
 
-        <form onSubmit={handleSubmit} className="form">
-          <div className="form-group">
+          <form className="form" onSubmit={handleSubmit}>
             <Input
+              id="patientName"
               label="Nombre del paciente"
               value={patientName}
               onChange={(e) => setPatientName(e.target.value)}
             />
-          </div>
 
-          <div className="form-group">
             <Input
+              id="date"
               label="Fecha"
               type="date"
               value={date}
               onChange={(e) => setDate(e.target.value)}
             />
-          </div>
 
-          <div className="form-actions">
-            <Button type="submit">Guardar cambios</Button>
-          </div>
-        </form>
+            <div className="form-actions">
+              <Button
+                type="button"
+                onClick={() => navigate("/appointments")}
+                disabled={isSubmitting}
+              >
+                Cancelar
+              </Button>
+
+              <Button type="submit" disabled={isSubmitting}>
+                {isSubmitting ? "Guardando..." : "Actualizar cita"}
+              </Button>
+            </div>
+          </form>
+        </div>
       </div>
     </Layout>
   );

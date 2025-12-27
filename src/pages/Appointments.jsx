@@ -1,31 +1,72 @@
 import { Link } from "react-router-dom";
 import Layout from "../components/Layout";
+import Button from "../components/Button";
 
-// Página que lista las citas
-// ❗ NO tiene estado propio
-const Appointments = ({ appointments, onDeleteAppointment }) => {
+import "./appointments.css";
+import "./form.css";
+
+const Appointments = ({ appointments = [], onDeleteAppointment }) => {
   return (
-    <div>
-      <Layout>
-        <h2>Mis citas</h2>
-        <Link to="/appointments/new">Crear nueva cita</Link>
+    <Layout>
+      <div className="appointments-page">
+        <div className="appointments-header">
+          <h2>Mis citas</h2>
+
+          <Link to="/appointments/new">
+            <Button>+ Nueva cita</Button>
+          </Link>
+        </div>
+
         {appointments.length === 0 ? (
-          <p>No hay citas registradas</p>
+          <div className="empty-state">
+            <div className="empty-state__title">Aún no tienes citas</div>
+
+            <p className="empty-state__text">
+              Empieza creando tu primera cita para gestionar tus pacientes de
+              forma ordenada.
+            </p>
+
+            <Link to="/appointments/new">
+              <Button>Crear primera cita</Button>
+            </Link>
+          </div>
         ) : (
-          <ul>
+          <div className="appointments-list">
             {appointments.map((appointment) => (
-              <li key={appointment.id}>
-                {appointment.patientName} — {appointment.date}{" "}
-                <Link to={`/appointments/${appointment.id}/edit`}>Editar</Link>
-                <button onClick={() => onDeleteAppointment(appointment.id)}>
-                  Eliminar
-                </button>
-              </li>
+              <div key={appointment.id} className="appointment-card">
+                <div className="appointment-info">
+                  <span className="appointment-name">
+                    {appointment.patientName}
+                  </span>
+                  <span className="appointment-date">{appointment.date}</span>
+                </div>
+
+                <div className="appointment-actions">
+                  <Link to={`/appointments/${appointment.id}/edit`}>
+                    <Button>Editar</Button>
+                  </Link>
+
+                  <Button
+                    variant="danger"
+                    onClick={() => {
+                      const confirmed = window.confirm(
+                        "¿Seguro que deseas eliminar esta cita?"
+                      );
+
+                      if (confirmed) {
+                        onDeleteAppointment(appointment.id);
+                      }
+                    }}
+                  >
+                    Eliminar
+                  </Button>
+                </div>
+              </div>
             ))}
-          </ul>
+          </div>
         )}
-      </Layout>
-    </div>
+      </div>
+    </Layout>
   );
 };
 

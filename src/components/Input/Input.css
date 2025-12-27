@@ -4,19 +4,33 @@
   gap: 6px;
 }
 
-.input-label {
+.input-group label {
   font-size: 0.9rem;
   font-weight: 500;
+  color: #444;
 }
 
-.input-field {
-  padding: 8px 10px;
+.input-group input {
+  padding: 10px 12px;
+  border-radius: 8px;
   border: 1px solid #ccc;
-  border-radius: 6px;
   font-size: 0.95rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-.input-field:focus {
+/* Foco (cuando escribes) */
+.input-group input:focus {
   outline: none;
   border-color: #1976d2;
+  box-shadow: 0 0 0 2px rgba(4, 43, 82, 0.15);
+}
+
+.input--error {
+  border-color: #dc2626;
+}
+
+.input-error {
+  color: #dc2626;
+  font-size: 0.8rem;
+  margin-top: 4px;
 }
