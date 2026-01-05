@@ -14,6 +14,7 @@ import Home from "./pages/Home";
 import Appointments from "./pages/Appointments";
 import NewAppointment from "./pages/NewAppointment";
 import EditAppointment from "./pages/EditAppointment";
+import ViewAppointment from "./pages/ViewAppointment";
 
 //Aqui empeiza app!!!!
 function App() {
@@ -24,7 +25,16 @@ function App() {
 
   //crear cita
   const addAppointment = (appointment) => {
+    const exists = appointments.some(
+      (a) => a.date === appointment.date && a.time === appointment.time
+    );
+
+    if (exists) {
+      return false; // indica que no se pudo guardar
+    }
+
     setAppointments((prev) => [...prev, appointment]);
+    return true; // indica éxito
   };
 
   //actualizar cita
@@ -71,6 +81,12 @@ function App() {
               onDeleteAppointment={deleteAppointment}
             />
           }
+        />
+
+        {/* Ver cita */}
+        <Route
+          path="/appointments/:id"
+          element={<ViewAppointment appointments={appointments} />}
         />
 
         {/* Crear nueva cita */}

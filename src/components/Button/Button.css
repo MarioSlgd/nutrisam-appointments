@@ -1,49 +1,60 @@
 .btn {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
+  gap: 6px;
 
-  padding: 8px 14px;
+  padding: 8px 12px;
   border-radius: 8px;
   border: none;
 
   font-size: 0.9rem;
   font-weight: 500;
-  line-height: 1;
 
   cursor: pointer;
-  transition: background-color 0.2s ease, box-shadow 0.2s ease,
-    transform 0.1s ease;
+  transition: background 0.2s ease, color 0.2s ease;
 }
 
-/* Primario */
 .btn--primary {
-  background-color: #2563eb;
+  background: #c379fb;
   color: white;
 }
 
 .btn--primary:hover {
-  background-color: #1e40af;
-  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.25);
-  transform: translateY(-1px);
+  background: #985ec4;
 }
 
-/* Peligro */
+.btn--info {
+  background: #f3e8ff;
+  color: #7c3aed;
+}
+
+.btn--info:hover {
+  background: #e9d5ff;
+}
+
+.btn--warning {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.btn--warning:hover {
+  background: #fde68a;
+}
+
+.btn--secondary {
+  background: #e5e7eb;
+  color: #374151;
+}
+
+.btn--secondary:hover {
+  background: #d1d5db;
+}
+
 .btn--danger {
-  background-color: #dc2626;
-  color: white;
+  background: #fee2e2;
+  color: #b91c1c;
 }
 
 .btn--danger:hover {
-  background-color: #b91c1c;
-  box-shadow: 0 4px 10px rgba(220, 38, 38, 0.25);
-  transform: translateY(-1px);
-}
-
-/* Deshabilitado */
-.btn:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
-  transform: none;
-  box-shadow: none;
+  background: #fecaca;
 }

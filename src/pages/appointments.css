@@ -23,14 +23,23 @@
 }
 
 .appointment-card {
-  border: 1px solid #e6e6e6;
-  border-radius: 12px;
+  background: #ffffff;
+  border-radius: 14px;
   padding: 16px;
-  background: white;
 
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.06), 0 4px 8px rgba(0, 0, 0, 0.04);
+
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.appointment-card:hover {
+  transform: translateY(-2px);
+
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.08), 0 6px 12px rgba(0, 0, 0, 0.06);
 }
 
 .appointment-info {
@@ -51,6 +60,8 @@
 .appointment-actions {
   display: flex;
   gap: 8px;
+  align-items: center;
+  align-self: center;
 }
 
 .empty-state {
@@ -76,4 +87,47 @@
 .empty-state__text {
   font-size: 0.95rem;
   max-width: 360px;
+}
+
+.appointment-datetime {
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+.appointment-reason {
+  font-size: 0.95rem;
+  margin-top: 6px;
+  color: #374151;
+}
+
+.appointments-search {
+  position: relative;
+  margin-bottom: 18px;
+}
+
+.appointments-search input {
+  width: 100%;
+  padding: 10px 14px 10px 40px;
+
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+
+  font-size: 0.95rem;
+  outline: none;
+
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+.appointments-search input:focus {
+  border-color: #c379fb;
+  box-shadow: 0 0 0 3px rgba(195, 121, 251, 0.2);
+}
+
+.search-icon {
+  position: absolute;
+  top: 50%;
+  left: 14px;
+  transform: translateY(-50%);
+  color: #9ca3af;
+  font-size: 1rem;
 }

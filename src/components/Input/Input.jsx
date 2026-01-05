@@ -1,7 +1,15 @@
 import "./Input.css";
 
 // Input reutilizable para formularios
-const Input = ({ label, type = "text", value, onChange, error, id }) => {
+const Input = ({
+  label,
+  type = "text",
+  value,
+  onChange,
+  error,
+  id,
+  ...props
+}) => {
   return (
     <div className="input-group">
       <label htmlFor={id}>{label}</label>
@@ -12,6 +20,7 @@ const Input = ({ label, type = "text", value, onChange, error, id }) => {
         value={value}
         onChange={onChange}
         className={error ? "input--error" : ""}
+        {...props}
       />
 
       {error && <span className="input-error">{error}</span>}

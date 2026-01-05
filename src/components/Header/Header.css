@@ -1,10 +1,20 @@
 .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  background: rgba(255, 255, 255, 0.97);
+  backdrop-filter: blur(8px);
 
-  padding: 16px 24px;
-  border-bottom: 1px solid #e0e0e0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 14px 28px;
+
+  /* SOMBRA SUTIL */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 .header__logo img {
@@ -34,15 +44,14 @@
   gap: 10px;
 }
 .header__branding img {
-  height: 40px;
+  height: 44px;
   width: auto;
-  display: block;
 }
 
 .header__title {
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   font-weight: 600;
-  color: #111827;
+  color: #7c3aed;
 }
 
 .header__nav a {
@@ -51,6 +60,6 @@
 }
 
 .header__nav a.active {
-  background-color: #2563eb;
+  background-color: #985ec4;
   color: white;
 }

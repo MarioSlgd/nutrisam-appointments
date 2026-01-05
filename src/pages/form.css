@@ -1,45 +1,101 @@
-/* Contenedor general del formulario */
 .form-page {
   max-width: 520px;
-  margin: 40px auto;
+  margin: 48px auto;
   padding: 0 16px;
 }
 
-/* Tarjeta */
 .form-card {
-  border: 1px solid #e6e6e6;
-  border-radius: 12px;
-  padding: 20px;
-  background: white;
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 28px;
+
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.1), 0 10px 20px rgba(0, 0, 0, 0.06);
 }
 
-/* Título */
 .form-title {
-  margin: 0 0 16px 0;
-  font-size: 1.3rem;
+  margin: 0 0 6px 0;
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: #111827;
 }
 
-/* Form */
+.form-subtitle {
+  margin-bottom: 22px;
+  font-size: 0.95rem;
+  color: #6b7280;
+}
+
 .form {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 18px;
 }
 
-/* Mensaje de error */
+.form-section {
+  margin-bottom: 24px;
+}
+
+.form-section-title {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #6b7280;
+  margin-bottom: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.input-group label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+.input-group input,
+.input-group select,
+.input-group textarea {
+  width: 100%;
+  padding: 10px 14px;
+
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+
+  font-size: 0.95rem;
+  resize: none;
+
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+.input-group input:focus,
+.input-group select:focus,
+.input-group textarea:focus {
+  border-color: #c379fb;
+  box-shadow: 0 0 0 3px rgba(195, 121, 251, 0.25);
+  outline: none;
+}
+
 .form-error {
-  margin: 0 0 12px 0;
   padding: 10px 12px;
-  border-radius: 8px;
+  border-radius: 10px;
+
   background: #fdecea;
   border: 1px solid #f5c2c0;
   color: #b71c1c;
+
   font-size: 0.95rem;
 }
 
-/* Footer para botón */
 .form-actions {
-  margin-top: 6px;
+  margin-top: 28px;
+  padding-top: 18px;
+
+  border-top: 1px solid #e5e7eb;
+
   display: flex;
   justify-content: flex-end;
   gap: 10px;

@@ -18,7 +18,6 @@
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* Foco (cuando escribes) */
 .input-group input:focus {
   outline: none;
   border-color: #1976d2;

@@ -6,7 +6,7 @@ const Header = () => {
   return (
     <header className="header">
       <div className="header__branding">
-        <img src="/Logo-Nutrisam.jpg" alt="Nutrisam logo" />
+        <img src="/Logo-Nutrisam.png" alt="Nutrisam logo" />
         <span className="header__title">Nutrisam</span>
       </div>
 
