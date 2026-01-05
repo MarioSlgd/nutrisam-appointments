@@ -4,6 +4,8 @@ Aplicación web para la **gestión de citas nutricionales**, diseñada como un *
 
 Permite crear, visualizar, editar y organizar citas mediante un **dashboard moderno** y una **agenda interactiva**, priorizando una experiencia clara y eficiente tanto para la nutrióloga como para el paciente.
 
+🔗 **Demo en producción:** https://nutrisam-appointments-pwbi.vercel.app/
+
 ---
 
 ## 📸 Vista previa
@@ -53,6 +55,7 @@ Este proyecto fue desarrollado con enfoque en **buenas prácticas frontend**, es
 - 🧩 **Componentes reutilizables** (Button, Input, Layout)
 - 🛠️ **Helpers reutilizables** para fechas y formato de texto
 - 📁 **Separación clara de responsabilidades** (`pages`, `components`, `utils`)
+- 🚀 Enfoque en cierre de MVP y despliegue real priorizando entrega funcional sobre sobre–ingeniería
 
 Actualmente el proyecto funciona **sin backend**, pero está preparado para integrarse fácilmente con una **API REST**.
 
@@ -71,15 +74,13 @@ Actualmente el proyecto funciona **sin backend**, pero está preparado para inte
 
 ## 🗺️ Roadmap (próximas mejoras)
 
-Funcionalidades planeadas para la evolución del proyecto:
-
 - 🔐 Autenticación de usuarios (nutrióloga / pacientes)
 - 💾 Persistencia con backend (API REST + base de datos)
 - 📱 Diseño responsive avanzado (mobile-first)
 - 📊 Reportes y estadísticas mensuales
 - 🔔 Recordatorios automáticos de citas
 - 🧾 Historial clínico por paciente
-- 🌐 Deploy en producción
+- 🌐 Dominio personalizado y optimización de despliegue
 
 ---
 
